@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 const Header = React.lazy(() => import("home/Header"));
 const Footer = React.lazy(() => import("home/Footer"));
 

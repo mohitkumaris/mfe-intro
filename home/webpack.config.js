@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+
 module.exports = {
   mode: "development",
   module: {
@@ -32,6 +33,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "home",
       filename: "remoteEntry.js",
+      remotes: {
+        home: "home@http://localhost:8080/remoteEntry.js",
+      },
       exposes: {
         "./Header": "./src/components/Header.jsx",
         "./Footer": "./src/components/Footer.jsx",
